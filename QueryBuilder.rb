@@ -121,11 +121,19 @@ class QueryBuilder
       str + ' '
     end
 
+    def build_order
+      "#{@attribute['order']} "
+    end
+
+    def build_limit
+      "#{@attribute['limit']} "
+    end
+
     def build_select
       @query += "SELECT #{@attribute['column']} FROM #{@attribute['table']} "
       @query += build_where
-      @query += @attribute['order'] + ' '
-      @query += @attribute['limit'] + ' '
+      @query += build_order
+      @query += build_limit
       return @query.strip
     end
 
@@ -133,16 +141,16 @@ class QueryBuilder
       @query += "UPDATE #{@attribute['table']} "
       @query += build_set
       @query += build_where
-      @query += @attribute['order'] + ' '
-      @query += @attribute['limit'] + ' '
+      @query += build_order
+      @query += build_limit
       return @query.strip
     end
 
     def build_delete
       @query += "DELETE FROM #{@attribute['table']} "
       @query += build_where
-      @query += @attribute['order'] + ' '
-      @query += @attribute['limit'] + ' '
+      @query += build_order
+      @query += build_limit
       return @query.strip
     end
   end 

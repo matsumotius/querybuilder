@@ -1,5 +1,5 @@
 # -*- encoding: UTF-8 -*-
-require File.dirname(__FILE__) + '/../QueryBuilder'
+require File.dirname(__FILE__) + '/../querybuilder'
 
 describe QueryBuilder do
   before(:each) do

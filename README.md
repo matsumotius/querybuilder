@@ -1,4 +1,4 @@
-# QueryBuilder
+# querybuilder
 an incomplete MySQL query builder
 
 ## License
